@@ -1,4 +1,4 @@
-export default const initialState = {
+export const initialState = {
   todos: [
     {
       id: 0,

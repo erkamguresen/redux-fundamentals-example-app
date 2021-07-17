@@ -6,6 +6,9 @@ export default function appReducer(state = initialState, action) {
   //to decide what happens
   switch (action.type) {
     // Do something here based on the different action types
+
+    /* TODO cases if written here
+
     case 'todos/todoAdded':
       // We need to return the new state object
       return {
@@ -48,6 +51,7 @@ export default function appReducer(state = initialState, action) {
         }),
       }
     }
+    */
 
     case 'filters/statusFilterChanged': {
       return {
