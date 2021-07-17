@@ -39,6 +39,22 @@ export const schema = {
     filters: {
       type: 'object',
       description: 'different filters for todo items',
+
+      properties: {
+        status: {
+          type: 'string',
+          description: 'one of three values: All, Active, or Completed',
+        },
+        colors: {
+          type: 'array',
+          description: 'array of different possible color badges for the items',
+
+          items: {
+            type: 'object',
+            description: 'name of the color',
+          },
+        },
+      },
     },
   },
 }

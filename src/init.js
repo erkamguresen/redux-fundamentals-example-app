@@ -9,7 +9,7 @@ const todoAppState = {
     { id: 2, text: 'Build something fun!', completed: false, color: 'blue' },
   ],
   filters: {
-    status: 'Active',
+    status: 'All',
     colors: ['red', 'blue'],
   },
 }
