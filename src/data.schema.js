@@ -32,6 +32,11 @@ export const schema = {
             type: 'boolean',
             description: 'completement status of the todo item',
           },
+
+          color: {
+            type: 'string',
+            description: 'An optional color category',
+          },
         },
       },
     },
