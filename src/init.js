@@ -1,4 +1,4 @@
-const todoAppState = {
+export default const initialState = {
   todos: [
     {
       id: 0,
@@ -10,6 +10,6 @@ const todoAppState = {
   ],
   filters: {
     status: 'All',
-    colors: ['red', 'blue'],
+    colors: [],
   },
 }
