@@ -1,7 +1,26 @@
 import initialState from './init'
+import { combineReducers } from 'redux'
+import todosReducer from './features/todos/todosSlice'
+import filtersReducer from './features/filters/filtersSlice'
+
+function rootReducer = combineReducers({
+  //define a top-level state field named 'todos' handled by 'todosReducer'
+  todos: todosReducer,
+  filters: filtersReducer,
+}) 
+
+export default rootReducer;
+
+// export default function rootReducer(state = initialState, action) {
+//   return {
+//     todos: todosReducer((state = state.todos), action),
+//     filters: filtersReducer((state = state.filters), action),
+//   }
+// }
 
 //use initial state as a default value for the state parameter
-export default function appReducer(state = initialState, action) {
+
+function appReducer(state = initialState, action) {
   // The reducer normally looks at the action type field
   //to decide what happens
   switch (action.type) {
