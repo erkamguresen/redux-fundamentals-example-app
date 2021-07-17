@@ -4,18 +4,17 @@ export const schema = {
     as follows: todos contain each todo item 
     and filters has the filter values`,
   type: 'object',
-  required: [],
+  required: ['todos', 'filters'],
 
   properties: {
     todos: {
       type: 'array',
       description: 'Array of the todo items',
 
-      required: [],
-
       items: {
         type: 'object',
         description: 'single todo item',
+        required: ['id', 'text', 'isCompleted'],
 
         properties: {
           id: {
@@ -44,6 +43,8 @@ export const schema = {
     filters: {
       type: 'object',
       description: 'different filters for todo items',
+
+      required: ['status', 'colors'],
 
       properties: {
         status: {
