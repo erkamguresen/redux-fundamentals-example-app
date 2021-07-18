@@ -3,18 +3,18 @@ import { combineReducers } from 'redux'
 import todosReducer from './features/todos/todosSlice'
 import filtersReducer from './features/filters/filtersSlice'
 
-// const rootReducer = combineReducers({
-//   //define a top-level state field named 'todos' handled by 'todosReducer'
-//   todos: todosReducer,
-//   filters: filtersReducer,
-// })
+const rootReducer = combineReducers({
+  //define a top-level state field named 'todos' handled by 'todosReducer'
+  todos: todosReducer,
+  filters: filtersReducer,
+})
 
-function rootReducer(state = initialState, action) {
-  return {
-    todos: todosReducer((state = state.todos), action),
-    filters: filtersReducer((state = state.filters), action),
-  }
-}
+// function rootReducer(state = initialState, action) {
+//   return {
+//     todos: todosReducer((state = state.todos), action),
+//     filters: filtersReducer((state = state.filters), action),
+//   }
+// }
 
 export default rootReducer
 //use initial state as a default value for the state parameter

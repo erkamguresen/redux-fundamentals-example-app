@@ -9,7 +9,7 @@ export const initialState = {
     // { id: 2, text: 'Build something fun!', completed: false, color: 'blue' },
   ],
   filters: {
-    // status: 'All',
-    // colors: [],
+    status: 'All',
+    colors: [],
   },
 }

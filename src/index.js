@@ -35,6 +35,8 @@ unsubscribe()
 
 store.dispatch({ type: 'todos/todoAdded', payload: 'Try creating a store' })
 
+console.log('Last state: ', store.getState())
+
 // Omit existing React rendering logic
 
 /*
