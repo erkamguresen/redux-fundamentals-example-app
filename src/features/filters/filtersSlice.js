@@ -27,7 +27,16 @@ export default function filtersReducer(state = initialState.filters, action) {
           }
 
         case 'removed':
-          break
+          return {
+            // Copy the whole state
+            ...state,
+
+            // And replace the status field with the new value
+            colors: state.colors.filter((color) => {
+              return color !== action.payload.color
+            }),
+          }
+
         default:
           break
       }

@@ -28,6 +28,16 @@ store.dispatch({
   payload: { color: 'red', changeType: 'added' },
 })
 
+store.dispatch({
+  type: 'filters/colorFilterChanged',
+  payload: { color: 'green', changeType: 'added' },
+})
+
+store.dispatch({
+  type: 'filters/colorFilterChanged',
+  payload: { color: 'red', changeType: 'removed' },
+})
+
 // Stop listening to state updates
 unsubscribe()
 
