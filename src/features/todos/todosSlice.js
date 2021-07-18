@@ -13,7 +13,7 @@ function nextTodoId(todos) {
  * @param {*} action
  * @returns
  */
-export default function todosReducer(state = initialState, action) {
+export default function todosReducer(state = initialState.todos, action) {
   switch (action.type) {
     case 'todos/todoAdded': {
       return [
@@ -29,25 +29,26 @@ export default function todosReducer(state = initialState, action) {
       ]
     }
     case 'todos/todoToggled': {
-      return [
-        // Again copy the entire state object
-        ...state,
+      // Again copy the entire state object
+      // console.log(state)
+      // state = [...state]
+      // console.log(state)
+      return state.map((todo) => {
+        // If this isn't the todo item we're looking for, leave it alone
+        if (todo.id !== action.payload) {
+          return todo
+        }
 
-        // This time, we need to make a copy of the old todos array
-        state.map((todo) => {
-          // If this isn't the todo item we're looking for, leave it alone
-          if (todo.id !== action.payload) {
-            return todo
-          }
+        // We've found the todo that has to change. Return a copy:
+        return {
+          ...todo,
+          // Flip the completed flag
+          completed: !todo.completed,
+        }
+      })
+      // [
 
-          // We've found the todo that has to change. Return a copy:
-          return {
-            ...todo,
-            // Flip the completed flag
-            completed: !todo.completed,
-          }
-        }),
-      ]
+      // ]
     }
     default:
       return state

@@ -1,7 +1,7 @@
 import { initialState } from '../../init'
 
 //only relevant state which is filter inthis case
-export default function filtersReducer(state = initialState, action) {
+export default function filtersReducer(state = initialState.filters, action) {
   switch (action.type) {
     case 'filters/statusFilterChanged': {
       return {
