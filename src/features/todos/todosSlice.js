@@ -1,4 +1,4 @@
-import initialState from './init'
+import { initialState } from '../../init'
 
 function nextTodoId(todos) {
   const maxId = todos.reduce((maxId, todo) => Math.max(todo.id, maxId), -1)
